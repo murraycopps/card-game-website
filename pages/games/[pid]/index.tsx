@@ -15,6 +15,7 @@ export default function GamePage({ game }: Props) {
 }
 
 export async function getServerSideProps({ params }: any) {
+  console.log(params.pid);
   const game = await axios.get<Game>(
     `http://localhost:5000/games/${params.pid}`
   );
